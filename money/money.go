@@ -1,5 +1,9 @@
 package money
 
-func Money() {
+type Dollar struct {
+	amount int
+}
+
+func (d *Dollar) times(int) {
 
 }
