@@ -4,6 +4,6 @@ type Dollar struct {
 	amount int
 }
 
-func (d *Dollar) times(int) {
-	d.amount = 10
+func (d *Dollar) times(multiplier int) {
+	d.amount = d.amount * multiplier
 }
