@@ -47,21 +47,3 @@ func TestFranc_times(t *testing.T) {
 		t.Errorf("expected 15, but answer is %d", five.amount)
 	}
 }
-
-func TestFranc_equals(t *testing.T) {
-	a := Franc{5}
-	b := Franc{5}
-	c := Franc{6}
-	// check Golang spec.
-	if a != b {
-		t.Error("comparing structs fail")
-	}
-
-	// unit tests below
-	if !a.equals(b) {
-		t.Error("func: equals does not work")
-	}
-	if a.equals(c) {
-		t.Error("func: equals does not work")
-	}
-}
