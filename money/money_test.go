@@ -6,12 +6,13 @@ import (
 
 func TestDollar_times(t *testing.T) {
 	five := Dollar{5}
-	product := five.times(2)
-	if product.amount != 10 {
+	expected := Dollar{10}
+	if expected != five.times(2) {
 		t.Errorf("expected 10, but answer is %d", five.amount)
 	}
-	product = five.times(3)
-	if product.amount != 15 {
+
+	expected = Dollar{15}
+	if expected != five.times(3) {
 		t.Errorf("expected 15, but answer is %d", five.amount)
 	}
 }
