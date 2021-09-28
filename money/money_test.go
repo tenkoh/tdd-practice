@@ -18,9 +18,9 @@ func TestDollar_times(t *testing.T) {
 }
 
 func TestDollar_equals(t *testing.T) {
-	a := Dollar{5}
-	b := Dollar{5}
-	c := Dollar{6}
+	a := Money{5}
+	b := Money{5}
+	c := Money{6}
 	// check Golang spec.
 	if a != b {
 		t.Error("comparing structs fail")
