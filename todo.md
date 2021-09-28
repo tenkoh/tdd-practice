@@ -4,6 +4,6 @@
 - [ ] amountをprivateにする
 - [x] Dollarの副作用どうする？
 - [ ] Moneyの丸め処理どうする？
-- [ ] Dollarにequals()を実装する
+- [x] Dollarにequals()を実装する
 - [ ] DollarにhashCode()を実装する
-- [ ] equalsに他のオブジェクトを渡された時の処置
+- [x] equalsに他のオブジェクトを渡せるようにするべきか？
