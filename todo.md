@@ -7,3 +7,4 @@
 - [x] Dollarにequals()を実装する
 - [ ] DollarにhashCode()を実装する
 - [x] equalsに他のオブジェクトを渡せるようにするべきか？
+- [ ] 5CHF * 2 = 10 CHF
