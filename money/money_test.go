@@ -4,16 +4,16 @@ import (
 	"testing"
 )
 
-func TestDollar_times(t *testing.T) {
-	five := Dollar{5}
-	expected := Dollar{10}
-	if expected != five.times(2) {
-		t.Errorf("expected 10, but answer is %d", five.amount)
+func TestMultiple(t *testing.T) {
+	five := Money{5}
+	expected := Money{10}
+	if calc := five.times(2); expected != calc {
+		t.Errorf("expected 10, but answer is %d", calc.amount)
 	}
 
-	expected = Dollar{15}
-	if expected != five.times(3) {
-		t.Errorf("expected 15, but answer is %d", five.amount)
+	expected = Money{15}
+	if calc := five.times(3); expected != calc {
+		t.Errorf("expected 15, but answer is %d", calc.amount)
 	}
 }
 
@@ -32,18 +32,5 @@ func TestEquality(t *testing.T) {
 	}
 	if a.equals(c) {
 		t.Error("func: equals does not work")
-	}
-}
-
-func TestFranc_times(t *testing.T) {
-	five := Franc{5}
-	expected := Franc{10}
-	if expected != five.times(2) {
-		t.Errorf("expected 10, but answer is %d", five.amount)
-	}
-
-	expected = Franc{15}
-	if expected != five.times(3) {
-		t.Errorf("expected 15, but answer is %d", five.amount)
 	}
 }

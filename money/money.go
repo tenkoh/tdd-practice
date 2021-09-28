@@ -12,18 +12,13 @@ func (m *Money) equals(i interface{}) bool {
 	return m.amount == money.amount
 }
 
+func (m *Money) times(multiplier int) Money {
+	return Money{m.amount * multiplier}
+}
+
 type Dollar struct {
 	amount int
 }
-
-func (d *Dollar) times(multiplier int) Dollar {
-	return Dollar{d.amount * multiplier}
-}
-
 type Franc struct {
 	amount int
-}
-
-func (f *Franc) times(multiplier int) Franc {
-	return Franc{f.amount * multiplier}
 }
