@@ -1,7 +1,12 @@
 package money
 
 type Money struct {
-	amount int
+	currency string
+	amount   int
+}
+
+func NewMoney(currency string, amount int) Money {
+	return Money{currency, amount}
 }
 
 func (m *Money) equals(i interface{}) bool {
@@ -13,7 +18,7 @@ func (m *Money) equals(i interface{}) bool {
 }
 
 func (m *Money) times(multiplier int) Money {
-	return Money{m.amount * multiplier}
+	return Money{m.currency, m.amount * multiplier}
 }
 
 type Dollar struct {

@@ -5,32 +5,32 @@ import (
 )
 
 func TestMultiple(t *testing.T) {
-	five := Money{5}
-	expected := Money{10}
+	five := NewMoney("USD", 5)
+	expected := NewMoney("USD", 10)
 	if calc := five.times(2); expected != calc {
 		t.Errorf("expected 10, but answer is %d", calc.amount)
 	}
 
-	expected = Money{15}
+	expected = NewMoney("USD", 15)
 	if calc := five.times(3); expected != calc {
 		t.Errorf("expected 15, but answer is %d", calc.amount)
 	}
 }
 
 func TestEquality(t *testing.T) {
-	a := Money{5}
-	b := Money{5}
-	c := Money{6}
-	// check Golang spec.
-	if a != b {
-		t.Error("comparing structs fail")
-	}
+	fiveDollar := NewMoney("USD", 5)
+	fiveFranc := NewMoney("CHF", 5)
 
-	// unit tests below
-	if !a.equals(b) {
-		t.Error("func: equals does not work")
+	if com := NewMoney("USD", 5); com != fiveDollar {
+		t.Error("fail in equality check between dollars")
 	}
-	if a.equals(c) {
-		t.Error("func: equals does not work")
+	if com := NewMoney("USD", 6); com == fiveDollar {
+		t.Error("fail in equality check between dollars")
+	}
+	if com := NewMoney("CHF", 5); com != fiveFranc {
+		t.Error("fail in equality check between francs")
+	}
+	if com := NewMoney("CHF", 5); com == fiveDollar {
+		t.Error("fail in equality check between dollar and franc")
 	}
 }
