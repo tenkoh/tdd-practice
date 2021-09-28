@@ -17,7 +17,7 @@ func TestDollar_times(t *testing.T) {
 	}
 }
 
-func TestDollar_equals(t *testing.T) {
+func TestEquality(t *testing.T) {
 	a := Money{5}
 	b := Money{5}
 	c := Money{6}

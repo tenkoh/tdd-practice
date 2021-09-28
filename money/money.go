@@ -1,5 +1,17 @@
 package money
 
+type Money struct {
+	amount int
+}
+
+func (m *Money) equals(i interface{}) bool {
+	money, ok := i.(Money)
+	if !ok {
+		return false
+	}
+	return m.amount == money.amount
+}
+
 type Dollar struct {
 	amount int
 }
