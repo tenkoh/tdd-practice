@@ -15,3 +15,19 @@ func (d *Dollar) equals(i interface{}) bool {
 	}
 	return d.amount == dollar.amount
 }
+
+type Franc struct {
+	amount int
+}
+
+func (f *Franc) times(multiplier int) Franc {
+	return Franc{f.amount * multiplier}
+}
+
+func (f *Franc) equals(i interface{}) bool {
+	franc, ok := i.(Franc)
+	if !ok {
+		return false
+	}
+	return f.amount == franc.amount
+}
