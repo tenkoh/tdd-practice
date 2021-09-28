@@ -26,10 +26,10 @@ func TestDollar_equals(t *testing.T) {
 	}
 
 	// unit tests below
-	if !a.equals(&b) {
+	if !a.equals(b) {
 		t.Error("func: equals does not work")
 	}
-	if a.equals(&c) {
+	if a.equals(c) {
 		t.Error("func: equals does not work")
 	}
 }
