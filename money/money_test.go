@@ -57,3 +57,16 @@ func TestPlusReturnSum(t *testing.T) {
 		t.Error("money.plus does not return sum struct")
 	}
 }
+
+func TestReduceSum(t *testing.T) {
+	var sum Expression
+	augend := NewMoney("USD", 4)
+	added := NewMoney("USD", 3)
+	sum = augend.plus(added)
+
+	bank := new(Bank)
+	reduced := bank.reduce(sum, "USD")
+	if expected := NewMoney("USD", 7); expected != reduced {
+		t.Error("reducing sum fails")
+	}
+}

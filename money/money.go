@@ -5,21 +5,6 @@ type Money struct {
 	amount   int
 }
 
-type Bank struct {
-}
-
-type Expression interface {
-}
-
-type Sum struct {
-	augend Money
-	added  Money
-}
-
-func (b *Bank) reduce(exp Expression, currency string) Money {
-	return Money{"USD", 10}
-}
-
 func NewMoney(currency string, amount int) Money {
 	return Money{currency, amount}
 }
