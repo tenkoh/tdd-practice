@@ -21,16 +21,16 @@ func TestEquality(t *testing.T) {
 	fiveDollar := NewMoney("USD", 5)
 	fiveFranc := NewMoney("CHF", 5)
 
-	if com := NewMoney("USD", 5); com != fiveDollar {
+	if fived := NewMoney("USD", 5); !fiveDollar.equals(fived) {
 		t.Error("fail in equality check between dollars")
 	}
-	if com := NewMoney("USD", 6); com == fiveDollar {
+	if sixd := NewMoney("USD", 6); fiveDollar.equals(sixd) {
 		t.Error("fail in equality check between dollars")
 	}
-	if com := NewMoney("CHF", 5); com != fiveFranc {
+	if fivef := NewMoney("CHF", 5); !fiveFranc.equals(fivef) {
 		t.Error("fail in equality check between francs")
 	}
-	if com := NewMoney("CHF", 5); com == fiveDollar {
+	if fivef := NewMoney("CHF", 5); fiveDollar.equals(fivef) {
 		t.Error("fail in equality check between dollar and franc")
 	}
 }

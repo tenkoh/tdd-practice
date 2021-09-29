@@ -5,14 +5,14 @@
 - [x] Dollarの副作用どうする？
 - [ ] Moneyの丸め処理どうする？
 - [x] Dollarにequals()を実装する
-- [ ] DollarにhashCode()を実装する
 - [x] equalsに他のオブジェクトを渡せるようにするべきか？
 - [x] 5CHF * 2 = 10 CHF
-- [ ] FrancとDollarの重複
+- [x] FrancとDollarの重複
 - [x] equalsの一般化
 - [x] timesの一般化
-- [ ] Franc同士の比較
-- [ ] DollarとFrancを区別する
+- [x] Franc同士の比較
+- [x] DollarとFrancを区別する
+- [ ] MoneyにhashCode()を実装する
 
 ## memo
 - equalsの一般化　⇒　Goの言語仕様上、クラスの継承が無いので、全く同じ思考プロセスにはならないはず。

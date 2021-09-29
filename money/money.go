@@ -14,16 +14,9 @@ func (m *Money) equals(i interface{}) bool {
 	if !ok {
 		return false
 	}
-	return m.amount == money.amount
+	return m.amount == money.amount && m.currency == money.currency
 }
 
 func (m *Money) times(multiplier int) Money {
 	return Money{m.currency, m.amount * multiplier}
-}
-
-type Dollar struct {
-	amount int
-}
-type Franc struct {
-	amount int
 }
