@@ -11,6 +11,11 @@ type Bank struct {
 type Expression interface {
 }
 
+type Sum struct {
+	augend Money
+	added  Money
+}
+
 func (b *Bank) reduce(exp Expression, currency string) Money {
 	return Money{"USD", 10}
 }
@@ -31,6 +36,6 @@ func (m *Money) times(multiplier int) Money {
 	return Money{m.currency, m.amount * multiplier}
 }
 
-func (m *Money) plus(money Money) Expression {
-	return Money{m.currency, m.amount + money.amount}
+func (augend *Money) plus(added Money) Expression {
+	return Sum{*augend, added}
 }

@@ -41,3 +41,19 @@ func TestSimpleAddition(t *testing.T) {
 		t.Error("simple addition fails")
 	}
 }
+
+func TestPlusReturnSum(t *testing.T) {
+	fiveDollar := NewMoney("USD", 5)
+	var result Expression
+	var sum Sum
+
+	result = fiveDollar.plus(NewMoney("USD", 5))
+	sum = result.(Sum)
+
+	if sum.augend != fiveDollar {
+		t.Error("money.plus does not return sum struct")
+	}
+	if sum.added != fiveDollar {
+		t.Error("money.plus does not return sum struct")
+	}
+}
