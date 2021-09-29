@@ -32,5 +32,5 @@ func (m *Money) times(multiplier int) Money {
 }
 
 func (m *Money) plus(money Money) Expression {
-	return nil
+	return Money{m.currency, m.amount + money.amount}
 }
