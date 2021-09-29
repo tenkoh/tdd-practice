@@ -19,16 +19,12 @@ func TestMultiple(t *testing.T) {
 
 func TestEquality(t *testing.T) {
 	fiveDollar := NewMoney("USD", 5)
-	fiveFranc := NewMoney("CHF", 5)
 
 	if fived := NewMoney("USD", 5); !fiveDollar.equals(fived) {
 		t.Error("fail in equality check between dollars")
 	}
 	if sixd := NewMoney("USD", 6); fiveDollar.equals(sixd) {
 		t.Error("fail in equality check between dollars")
-	}
-	if fivef := NewMoney("CHF", 5); !fiveFranc.equals(fivef) {
-		t.Error("fail in equality check between francs")
 	}
 	if fivef := NewMoney("CHF", 5); fiveDollar.equals(fivef) {
 		t.Error("fail in equality check between dollar and franc")
