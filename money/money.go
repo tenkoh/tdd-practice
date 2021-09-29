@@ -20,3 +20,7 @@ func (m *Money) equals(i interface{}) bool {
 func (m *Money) times(multiplier int) Money {
 	return Money{m.currency, m.amount * multiplier}
 }
+
+func (m *Money) plus(money Money) Money {
+	return NewMoney(m.currency, m.amount+money.amount)
+}

@@ -30,3 +30,11 @@ func TestEquality(t *testing.T) {
 		t.Error("fail in equality check between dollar and franc")
 	}
 }
+
+func TestSimpleAddition(t *testing.T) {
+	fiveDollar := NewMoney("USD", 5)
+	sum := fiveDollar.plus(NewMoney("USD", 5))
+	if expected := NewMoney("USD", 10); !expected.equals(sum) {
+		t.Error("simple addition fails")
+	}
+}
