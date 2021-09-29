@@ -6,6 +6,7 @@ import (
 
 func TestMultiple(t *testing.T) {
 	five := NewMoney("USD", 5)
+
 	expected := NewMoney("USD", 10)
 	if calc := five.times(2); expected != calc {
 		t.Errorf("expected 10, but answer is %d", calc.amount)

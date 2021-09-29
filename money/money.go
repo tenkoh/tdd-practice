@@ -8,7 +8,7 @@ type Money struct {
 type Bank struct {
 }
 
-type Expression struct {
+type Expression interface {
 }
 
 func (b *Bank) reduce(exp Expression, currency string) Money {
@@ -32,5 +32,5 @@ func (m *Money) times(multiplier int) Money {
 }
 
 func (m *Money) plus(money Money) Expression {
-	return Expression{}
+	return nil
 }
