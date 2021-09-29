@@ -34,7 +34,9 @@ func TestEquality(t *testing.T) {
 func TestSimpleAddition(t *testing.T) {
 	fiveDollar := NewMoney("USD", 5)
 	sum := fiveDollar.plus(NewMoney("USD", 5))
-	if expected := NewMoney("USD", 10); !expected.equals(sum) {
+	bank := new(Bank)
+	reduced := bank.reduce(sum, "USD")
+	if expected := NewMoney("USD", 10); !expected.equals(reduced) {
 		t.Error("simple addition fails")
 	}
 }

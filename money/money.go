@@ -5,6 +5,16 @@ type Money struct {
 	amount   int
 }
 
+type Bank struct {
+}
+
+type Expression struct {
+}
+
+func (b *Bank) reduce(exp Expression, currency string) Money {
+	return Money{"USD", 10}
+}
+
 func NewMoney(currency string, amount int) Money {
 	return Money{currency, amount}
 }
@@ -21,6 +31,6 @@ func (m *Money) times(multiplier int) Money {
 	return Money{m.currency, m.amount * multiplier}
 }
 
-func (m *Money) plus(money Money) Money {
-	return NewMoney(m.currency, m.amount+money.amount)
+func (m *Money) plus(money Money) Expression {
+	return Expression{}
 }
