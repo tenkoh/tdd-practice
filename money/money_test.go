@@ -70,3 +70,12 @@ func TestReduceSum(t *testing.T) {
 		t.Error("reducing sum fails")
 	}
 }
+
+func TestReduceMoney(t *testing.T) {
+	five := NewMoney("USD", 5)
+	bank := new(Bank)
+	reduced := bank.reduce(five, "USD")
+	if reduced != five {
+		t.Error("bank.reduce(money) error")
+	}
+}
